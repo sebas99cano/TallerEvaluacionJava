@@ -1,0 +1,1 @@
+6. Realiza el ejercicio anterior usando un ciclo for.
