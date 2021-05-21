@@ -1,8 +1,15 @@
-package punto1;
+package punto2;
+
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        variableMayor(67, 90);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingrese el priemer numero: ");
+        int variable1 = scanner.nextInt();
+        System.out.println("Ingrese el segundo numero: ");
+        int variable2 = scanner.nextInt();
+        variableMayor(variable1, variable2);
     }
 
     public static void variableMayor(int variable1, int variable2) {
