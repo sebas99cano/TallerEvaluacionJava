@@ -16,7 +16,7 @@ public class Main {
         System.out.println("Ingrese el peso en kg: ");
         float peso = scanner.nextFloat();
         System.out.println("Ingrese la altura en metros: ");
-        float altura = scanner.nextFloat();
+        float altura = Float.parseFloat(scanner.next());
 
         Persona persona1 = new Persona(nombre,edad,sexo,peso,altura);
 
@@ -24,12 +24,22 @@ public class Main {
 
         Persona persona3 = new Persona();
         persona3.setNombre("Sebastian Cano");
-        persona3.setEdad(22);
+        persona3.setEdad(15);
         persona3.setSexo('M');
         persona3.setPeso(75);
         persona3.setAltura(1.75F);
 
-        
+        System.out.println("la persona 1 esta: "+persona1.calcularIMC());
+        System.out.println("la persona 2 esta: "+persona2.calcularIMC());
+        System.out.println("la persona 3 esta: "+persona3.calcularIMC());
+
+        System.out.println("la persona 1 es mayor de edad: "+persona1.esMayorDeEdad());
+        System.out.println("la persona 2 es mayor de edad: "+persona2.esMayorDeEdad());
+        System.out.println("la persona 3 es mayor de edad: "+persona3.esMayorDeEdad());
+
+        System.out.println(persona1.toString());
+        System.out.println(persona2.toString());
+        System.out.println(persona3.toString());
 
     }
 }

@@ -16,44 +16,49 @@ public class Persona {
     public Persona(String nombre, int edad, char sexo) {
         this.nombre = nombre;
         this.edad = edad;
-        this.sexo = sexo;
+        comprobarSexo(sexo);
         generaDNI();
     }
 
     public Persona(String nombre, int edad, char sexo, float peso, float altura) {
         this.nombre = nombre;
         this.edad = edad;
-        this.sexo = sexo;
         this.peso = peso;
         this.altura = altura;
+        comprobarSexo(sexo);
         generaDNI();
     }
 
-    private int calcularIMC() {
-        float funcion = (float) (this.peso / Math.pow(this.altura, 2));
-        int interpretacion;
+    public String calcularIMC() {
+        float funcion = (float) ((this.peso / Math.pow(this.altura,2)));
+        String interpretacionIMC;
         if (funcion < 20) {
-            interpretacion = -1;//por debajo de su peso ideal
-        } else if (funcion > 25) {
-            interpretacion = -1;//peso ideal
-        } else {
-            interpretacion = 0;//sobrepeso
+            interpretacionIMC = -1 +"(por debajo de su peso ideal)";
+        }else if(funcion > 19 && funcion < 26){
+            interpretacionIMC = 0 + "(esta en su peso ideal)";
+        }else{
+            interpretacionIMC = 1+ "(por encima de su peso ideal)";
         }
-        return interpretacion;
+        return interpretacionIMC;
     }
 
-    private boolean esMayorDeEdad() {
+    public boolean esMayorDeEdad() {
         return this.edad > 17;
     }
 
     private void comprobarSexo(char sexo) {
-        if (sexo != 'M' || sexo != 'F') {
-            this.sexo = 'M';
-        }
+        if(sexo == 'M'){this.sexo = sexo;}
     }
 
     private void generaDNI() {
-        this.dni = String.valueOf((Math.round(Math.random() * 100000000)));
+        int numeroDNI = (int) Math.round((Math.random()*(99999999-10000000)+10000000));
+        this.dni = ((numeroDNI)+"-"+ calcularletraDNI(numeroDNI));
+    }
+
+    private static char calcularletraDNI(int dni){
+        String caracteres="TRWAGMYFPDXBNJZSQVHLCKE";
+        int resto = dni%23;
+        return caracteres.charAt(resto);
     }
 
     @Override
@@ -61,10 +66,12 @@ public class Persona {
         return "Persona{" +
                 "nombre='" + nombre + '\'' +
                 ", edad=" + edad +
+                ", es mayor de edad =" + esMayorDeEdad() +
                 ", dni='" + dni + '\'' +
                 ", sexo=" + sexo +
                 ", peso=" + peso +
                 ", altura=" + altura +
+                ", IMC=" + calcularIMC() +
                 '}';
     }
 
