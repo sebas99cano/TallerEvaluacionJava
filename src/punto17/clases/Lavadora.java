@@ -32,4 +32,8 @@ public class Lavadora extends Electrodomestico{
                 "carga=" + carga +
                 '}';
     }
+
+    public float getCarga() {
+        return carga;
+    }
 }
