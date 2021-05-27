@@ -5,15 +5,15 @@ import java.util.List;
 
 public class Electrodomestico {
 
-    private static final float precioBaseDefecto = 100;
-    private static final String colorDefecto = "blanco";
-    private static final char consumoEnergeticoDefecto = 'F';
-    private static final float pesoDefecto = 5;
+    protected static final float PRECIO_BASE_DEFECTO = 100;
+    protected static final String COLOR_DEFECTO = "blanco";
+    protected static final char CONSUMO_ENERGETICO_DEFECTO = 'F';
+    protected static final float PESO_DEFECTO = 5;
 
-    private float precioBase = precioBaseDefecto;
-    private String color = colorDefecto;
-    private char consumoEnergetico = consumoEnergeticoDefecto;
-    private float peso = pesoDefecto;
+    private float precioBase;
+    private String color;
+    private char consumoEnergetico;
+    private float peso;
 
     public Electrodomestico(float precioBase, String color, char consumoEnergetico, float peso) {
         this.precioBase = precioBase;
@@ -23,11 +23,11 @@ public class Electrodomestico {
     }
 
     public Electrodomestico(float precioBase, float peso) {
-        this.precioBase = precioBase;
-        this.peso = peso;
+        this(precioBase,COLOR_DEFECTO,CONSUMO_ENERGETICO_DEFECTO,peso);
     }
 
     public Electrodomestico() {
+        this(PRECIO_BASE_DEFECTO,COLOR_DEFECTO,CONSUMO_ENERGETICO_DEFECTO,PESO_DEFECTO);
     }
 
     private void comprobarConsumoEnergetico(char consumoEnergetico) {
@@ -38,7 +38,7 @@ public class Electrodomestico {
         listaPosible.add('D');
         listaPosible.add('E');
 
-        this.consumoEnergetico = (listaPosible.stream().anyMatch(s -> s.equals(consumoEnergetico))) ? consumoEnergetico : 'F';
+        this.consumoEnergetico = (listaPosible.stream().anyMatch(s -> s.equals(consumoEnergetico))) ? consumoEnergetico : CONSUMO_ENERGETICO_DEFECTO;
 
     }
 
@@ -49,7 +49,7 @@ public class Electrodomestico {
         listaPosible.add("azul");
         listaPosible.add("gris");
 
-        this.color = (listaPosible.stream().anyMatch(s -> s.equalsIgnoreCase(color))) ? color : "blanco";
+        this.color = (listaPosible.stream().anyMatch(s -> s.equalsIgnoreCase(color))) ? color : COLOR_DEFECTO;
 
     }
 

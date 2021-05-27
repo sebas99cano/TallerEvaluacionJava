@@ -1,9 +1,9 @@
 package punto17.clases;
 
 public class Lavadora extends Electrodomestico{
-    private static final float cargaDefecto = 5;
+    private static final float CARGA_DEFECTO = 5;
 
-    private float carga = cargaDefecto;
+    private float carga;
 
     public Lavadora(float precioBase, String color, char consumoEnergetico, float peso, float carga) {
         super(precioBase, color, consumoEnergetico, peso);
@@ -11,10 +11,11 @@ public class Lavadora extends Electrodomestico{
     }
 
     public Lavadora(float precioBase, float peso) {
-        super(precioBase, peso);
+        super(precioBase,COLOR_DEFECTO,CONSUMO_ENERGETICO_DEFECTO,peso);
     }
 
     public Lavadora() {
+        this(PRECIO_BASE_DEFECTO,COLOR_DEFECTO,CONSUMO_ENERGETICO_DEFECTO,PESO_DEFECTO,CARGA_DEFECTO);
     }
 
     @Override
