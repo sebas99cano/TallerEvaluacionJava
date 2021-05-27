@@ -42,17 +42,17 @@ public class Serie implements Entregable{
 
     @Override
     public void entregar() {
-
+        this.entregado = true;
     }
 
     @Override
     public void devolver() {
-
+        this.entregado = false;
     }
 
     @Override
     public boolean isEntregado() {
-        return false;
+        return this.entregado;
     }
 
     @Override
