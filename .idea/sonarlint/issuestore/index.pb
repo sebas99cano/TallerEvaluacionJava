@@ -44,8 +44,6 @@ D
 D
 src/punto6/Main.java,9\3\939b1caf4fe5a22e4e051e326ab34f7e08f1227f
 E
-src/punto12/Main.java,d\0\d00a51308ebb2ffa0604d2d897a742358d57fffb
-E
 src/punto12/README.md,6\0\60b184cb2c5d2fe64c2dd1386a10b0cd16b4acbe
 E
 src/punto13/README.md,6\d\6da43128b6cac69c24c55df4a3add8c363a7aecc
