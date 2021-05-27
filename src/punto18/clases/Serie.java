@@ -57,7 +57,13 @@ public class Serie implements Entregable{
 
     @Override
     public int compareTo(Object a) {
-        return 0;
+        int comparacion = -1; // es mayor el objeto a
+        if(this.numeroTemporadas ==  ((Serie) a).getNumeroTemporadas()){
+            comparacion = 0; //ambos son iguales
+        }else if(this.numeroTemporadas >  ((Serie) a).getNumeroTemporadas()){
+            comparacion = 1; //es menor el objeto a
+        }
+        return comparacion;
     }
 
     public void setTitulo(String titulo) {
