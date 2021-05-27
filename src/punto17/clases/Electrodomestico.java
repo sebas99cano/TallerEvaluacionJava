@@ -117,11 +117,11 @@ public class Electrodomestico {
     @Override
     public String toString() {
         return this.getClass().getSimpleName()+" {" +
-                "precioBase=" + precioBase +
+                "precioBase=" + precioBase +" euros"+
                 ", color='" + color + '\'' +
                 ", consumoEnergetico=" + consumoEnergetico +
                 ", peso=" + peso +
-                ", Precio Final=" + precioFinal() +
+                ", Precio Final=" + precioFinal() +" euros"+
                 '}';
     }
 }
