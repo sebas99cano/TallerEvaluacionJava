@@ -61,22 +61,22 @@ public class Electrodomestico {
         float precioAdicional = 0;
         switch (this.consumoEnergetico) {
             case 'A':
-                consumoEnergetico = 100;
+                precioAdicional = 100;
                 break;
             case 'B':
-                consumoEnergetico = 80;
+                precioAdicional = 80;
                 break;
             case 'C':
-                consumoEnergetico = 60;
+                precioAdicional = 60;
                 break;
             case 'D':
-                consumoEnergetico = 50;
+                precioAdicional = 50;
                 break;
             case 'E':
-                consumoEnergetico = 30;
+                precioAdicional = 30;
                 break;
             case 'F':
-                consumoEnergetico = 10;
+                precioAdicional = 10;
                 break;
             default:
                 break;
@@ -112,5 +112,16 @@ public class Electrodomestico {
 
     public float getPeso() {
         return peso;
+    }
+
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName()+" {" +
+                "precioBase=" + precioBase +
+                ", color='" + color + '\'' +
+                ", consumoEnergetico=" + consumoEnergetico +
+                ", peso=" + peso +
+                ", Precio Final=" + precioFinal() +
+                '}';
     }
 }
